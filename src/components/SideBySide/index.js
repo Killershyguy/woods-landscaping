@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Title, Paragraph } from '../text';
+import { Title, Paragraph, SubTitle } from '../text';
+
+const CenterText = styled.p`
+  text-align: center;
+`;
 
 const Image = styled.img`
   height: auto;
   max-width: 100%;
+  border: 10px solid ${p => p.theme.color.darkGreen};
 `;
 
 const Wrapper = styled.div`
@@ -18,24 +23,39 @@ const Wrapper = styled.div`
 const TextWrapper = styled.div`
   flex-direction: column;
   width: 50%;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
 `;
 
 const ImgWrapper = styled.div`
   flex-direction: column;
   width: 50%;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 `;
 
-const SideBySide = ({ text, title, image, imageText }) => (
+const SideBySide = ({ text, title, image, imageText, subTitle }) => (
   <Wrapper>
     <TextWrapper>
-      {title && <Title>{title}</Title>}
+      <TitleWrapper>
+        {title && <Title>{title}</Title>}
+        <SubTitle>{subTitle}</SubTitle>
+      </TitleWrapper>
       <Paragraph>{text}</Paragraph>
     </TextWrapper>
     <ImgWrapper>
       <Image src={image} />
-      {imageText && <Paragraph>{imageText}</Paragraph>}
+      {imageText && <CenterText>{imageText}</CenterText>}
     </ImgWrapper>
   </Wrapper>
 );

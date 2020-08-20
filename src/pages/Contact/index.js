@@ -4,7 +4,8 @@ import SideBySide from '../../components/SideBySide';
 
 const Wrapper = styled.div`
   background-color: white;
-  height: 675px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -16,10 +17,16 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `;
 
+const Title = styled.h1`
+  padding-top: 25px;
+  text-align: center;
+`;
+
 const ownerImage = require('./landscaping.jpg');
 
 const Contact = () => (
   <Wrapper>
+    <Title>Contact</Title>
     <SideBySide
       text={
         <List>

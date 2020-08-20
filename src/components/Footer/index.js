@@ -3,29 +3,31 @@ import styled from 'styled-components';
 import Link from '../Header/Link';
 
 const GoldBar = styled.div`
-  background-color: gold;
-  height: 20px;
+  background-color: ${p => p.theme.color.gold};
+  height: 4px;
   width: 100%;
   flex-direction: column;
 `;
 
 const Logo = styled.img`
-  max-height: 100px;
+  max-height: 70px;
 `;
 
 const logo = require('../Header/Logo.png');
 
 const LogoBar = styled.div`
-  background-color: grey;
+  background-color: ${p => p.theme.color.maroon};
   width: 100%;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const Wrapper = styled.div`
-  background-color: grey;
   width: 100%;
   flex-direction: column;
 `;
@@ -37,10 +39,10 @@ const Footer = () => (
       <Link to="/" isLogo>
         <Logo src={logo} alt="woods landscaping" />
       </Link>
-      <a href="mailto:brandtwood@woodlanscaping">
+      <a href="mailto:brandtwood@woodlanscaping" style={{ textDecoration: 'none' }}>
         Brandt@WoodsLandscapingLLC.com
       </a>
-      <a href="tel:615-969-9382">615-969-9382</a>
+      <a href="tel:615-969-9382" style={{ textDecoration: 'none' }}>615-969-9382</a>
     </LogoBar>
   </Wrapper>
 );

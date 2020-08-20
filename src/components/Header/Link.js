@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 
 const StyledLink = styled.div`
   background-color: ${p =>
-    p.isLogo ? p.theme.color.white : p.theme.color.darkGreen};
+    p.isLogo ? p.theme.color.white : p.theme.color.maroon};
   display: flex;
   justify-content: ${p => (p.isLogo ? 'flex-start' : 'center')};
   width: ${p => (p.isLogo ? 'auto' : '100%')};
+  color: ${p => p.theme.color.white}
 `;
 
 const Link = ({ to, text, children, isLogo }) => (
-  <StyledLink to={to} as={NavLink} isLogo={isLogo}>
+  <StyledLink to={to} as={NavLink} isLogo={isLogo} style={{ textDecoration: 'none' }}>
     {text && <p>{text}</p>}
     {children}
   </StyledLink>

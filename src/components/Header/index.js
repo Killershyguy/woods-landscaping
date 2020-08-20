@@ -2,9 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from './Link';
 
+const GreenBar = styled.div`
+  background-color: ${p => p.theme.color.darkGreen};
+  height: 6px;
+  width: 100%;
+  flex-direction: column;
+`;
+
 const GoldBar = styled.div`
-  background-color: gold;
-  height: 20px;
+  background-color: ${p => p.theme.color.gold};
+  height: 4px;
   width: 100%;
   flex-direction: column;
 `;
@@ -21,11 +28,14 @@ const LogoBar = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const Logo = styled.img`
-  max-height: 100px;
+  max-height: 70px;
 `;
 
 const logo = require('./Logo.png');
@@ -37,19 +47,20 @@ const LinkWrapper = styled.div`
 
 const Header = () => (
   <Wrapper>
-    <GoldBar />
+    <GreenBar />
     <LogoBar>
       <Link to="/" isLogo>
-        <Logo src={logo} alt="dope cereal" />
+        <Logo src={logo} alt="wood's landscaping logo" />
       </Link>
-      <a href="tel:615-969-9382">615-969-9382</a>
+      <a href="tel:615-969-9382" style={{ textDecoration: 'none' }}>615-969-9382</a>
     </LogoBar>
+    <GoldBar />
     <LinkWrapper>
       <Link to="/" text="Home" />
       <Link to="/About" text="About" />
-      <Link to="" text="Services" />
+      <Link to="/Services" text="Services" />
       <Link to="/Contact" text="Contact" />
-      <Link to="" text="Gallery" />
+      <Link to="/Gallery" text="Gallery" />
     </LinkWrapper>
   </Wrapper>
 );
