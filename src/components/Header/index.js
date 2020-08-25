@@ -43,6 +43,8 @@ const logo = require('./Logo.png');
 const LinkWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
+  text-align: center;
+  align-items: center;
 `;
 
 const Header = () => (

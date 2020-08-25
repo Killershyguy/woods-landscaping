@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const BodyText = styled.p`
   padding-left: 150px;
   padding-right: 150px;
+  padding-top: 25px;
   font-family: ${p => p.theme.font.PlayfairDisplay};
   text-align: center;
 `;
@@ -33,6 +34,7 @@ const ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
+  padding-bottom: 30px;
   width: 100%;
 `;
 
@@ -44,6 +46,7 @@ const SubHeadImage = styled.div`
 `;
 
 const Title = styled.h1`
+  padding-top: 30px;
   text-align: center;
 `;
 

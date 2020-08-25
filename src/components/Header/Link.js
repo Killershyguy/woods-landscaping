@@ -8,6 +8,8 @@ const StyledLink = styled.div`
     p.isLogo ? p.theme.color.white : p.theme.color.maroon};
   display: flex;
   justify-content: ${p => (p.isLogo ? 'flex-start' : 'center')};
+  padding-top: ${p => (p.isLogo ? '0px' : '10px')};
+  padding-bottom: ${p => (p.isLogo ? '0px' : '10px')};
   width: ${p => (p.isLogo ? 'auto' : '100%')};
   color: ${p => p.theme.color.white}
 `;

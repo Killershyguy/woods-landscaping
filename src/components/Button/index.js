@@ -6,7 +6,7 @@ const ServiceButton = styled.button`
     background-color: brown;
     border: none;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 18px 50px;
     width: 100px;
 `;
 

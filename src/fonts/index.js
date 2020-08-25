@@ -1,4 +1,4 @@
-import PlayfairDisplay from './PlayfairDisplay.tff';
+import PlayfairDisplay from './PlayfairDisplay.ttf';
 
 export default {
     PlayfairDisplay: [

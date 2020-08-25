@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import SideBySide from '../../components/SideBySide';
 import Button from '../../components/Button';
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+`;
+
 const List = styled.ul`
   list-style: none;
 `;
@@ -28,8 +37,13 @@ const hardscape = require('./hardscape.png');
 
 const Services = () => 
 <Wrapper>
-<Button>test</Button>
-  <button type="button">Click Me!</button>
+  <Title>Homeowner</Title>
+  <ButtonWrapper>
+    <Button text={`plant installation`}></Button>
+    <Button text={`test`}></Button>
+    <Button text={`test`}></Button>
+    <Button text={`test`}></Button>
+  </ButtonWrapper>
   <Title>Plant Installation</Title>
   <SideBySide
       text={
