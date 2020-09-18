@@ -39,4 +39,7 @@ export default createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       max-width: 100%;
     }
+    p {
+      font-family: ${p => p.theme.font.MerriweatherRegular};
+    }
 `;

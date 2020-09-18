@@ -9,7 +9,6 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 
-
 const Container = styled.div`
   width: 100%;
   flex-direction: column;

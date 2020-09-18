@@ -10,13 +10,15 @@ const GoldBar = styled.div`
 `;
 
 const Logo = styled.img`
-  max-height: 70px;
+  /* max-height: 70px; */
+  width: 200px;
 `;
 
 const logo = require('../Header/Logo.png');
+// const trees = require('./tree-silhouette.jpg');
 
 const LogoBar = styled.div`
-  background-color: ${p => p.theme.color.maroon};
+  background-color: #3b3739;
   width: 100%;
   justify-content: space-between;
   flex-direction: row;
@@ -25,6 +27,7 @@ const LogoBar = styled.div`
   padding-right: 40px;
   padding-top: 15px;
   padding-bottom: 15px;
+  text-align: right;
 `;
 
 const Wrapper = styled.div`
@@ -39,10 +42,18 @@ const Footer = () => (
       <Link to="/" isLogo>
         <Logo src={logo} alt="woods landscaping" />
       </Link>
-      <a href="mailto:brandtwood@woodlanscaping" style={{ textDecoration: 'none' }}>
+      <a
+        href="mailto:brandtwood@woodlanscaping"
+        style={{ textDecoration: 'none', color: 'white' }}
+      >
         Brandt@WoodsLandscapingLLC.com
       </a>
-      <a href="tel:615-969-9382" style={{ textDecoration: 'none' }}>615-969-9382</a>
+      <a
+        href="tel:615-969-6025"
+        style={{ textDecoration: 'none', color: 'white', width: 200 }}
+      >
+        615-969-6025
+      </a>
     </LogoBar>
   </Wrapper>
 );

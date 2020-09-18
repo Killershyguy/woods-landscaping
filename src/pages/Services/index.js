@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import SideBySide from '../../components/SideBySide';
 import Button from '../../components/Button';
@@ -14,6 +14,7 @@ const ButtonWrapper = styled.div`
 
 const List = styled.ul`
   list-style: none;
+  padding-left: 0px;
 `;
 
 const ListItem = styled.li`
@@ -35,63 +36,88 @@ const Title = styled.h1`
 const plantInstallation = require('./plantInstallation.jpg');
 const hardscape = require('./hardscape.png');
 
-const Services = () => 
-<Wrapper>
-  <Title>Homeowner</Title>
-  <ButtonWrapper>
-    <Button text={`plant installation`}></Button>
-    <Button text={`test`}></Button>
-    <Button text={`test`}></Button>
-    <Button text={`test`}></Button>
-  </ButtonWrapper>
-  <Title>Plant Installation</Title>
-  <SideBySide
-      text={
-        <List>
-          <ListItem>Phone Number: 615-969-9382</ListItem>
-          <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
-          <ListItem>Mailing Address: P.O. Box </ListItem>
-          <ListItem>Location: Gallatin, TN</ListItem>
-        </List>
-      }
-      image={plantInstallation}
-    />
-    <Title>Hardscapes</Title>
-    <SideBySide
-      text={
-        <List>
-          <ListItem>Phone Number: 615-969-9382</ListItem>
-          <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
-          <ListItem>Mailing Address: P.O. Box </ListItem>
-          <ListItem>Location: Gallatin, TN</ListItem>
-        </List>
-      }
-      image={hardscape}
-    />
-    <Title>Irrigation</Title>
-    <SideBySide
-      text={
-        <List>
-          <ListItem>Phone Number: 615-969-9382</ListItem>
-          <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
-          <ListItem>Mailing Address: P.O. Box </ListItem>
-          <ListItem>Location: Gallatin, TN</ListItem>
-        </List>
-      }
-      image={plantInstallation}
-    />
-    <Title>Maintenance</Title>
-    <SideBySide
-      text={
-        <List>
-          <ListItem>Phone Number: 615-969-9382</ListItem>
-          <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
-          <ListItem>Mailing Address: P.O. Box </ListItem>
-          <ListItem>Location: Gallatin, TN</ListItem>
-        </List>
-      }
-      image={plantInstallation}
-    />
-</Wrapper>;
+const Services = () => {
+  const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
+
+  const plantRef = useRef(null);
+  const hardscapeRef = useRef(null);
+  const irrigationRef = useRef(null);
+  const maintenanceRef = useRef(null);
+
+  return (
+    <Wrapper>
+      <Title>Services - Homeowner</Title>
+      <ButtonWrapper>
+        <Button onClick={() => scrollToRef(plantRef)} text={'Plant Install'} />
+        <Button onClick={() => scrollToRef(hardscapeRef)} text={'Hardscapes'} />
+        <Button
+          onClick={() => scrollToRef(irrigationRef)}
+          text={'Irrigation'}
+        />
+        <Button
+          onClick={() => scrollToRef(maintenanceRef)}
+          text={'Maintenance'}
+        />
+      </ButtonWrapper>
+      <Title>Plant Installation</Title>
+      <SideBySide
+        ref={plantRef}
+        color={'beige'}
+        title={'Plant Installation'}
+        text={
+          <List>
+            <ListItem>Phone Number: 615-969-9382</ListItem>
+            <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
+            <ListItem>Mailing Address: P.O. Box </ListItem>
+            <ListItem>Location: Gallatin, TN</ListItem>
+          </List>
+        }
+        image={plantInstallation}
+      />
+      <SideBySide
+        ref={hardscapeRef}
+        color={'white'}
+        title={'Hardscapes'}
+        text={
+          <List>
+            <ListItem>Phone Number: 615-969-9382</ListItem>
+            <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
+            <ListItem>Mailing Address: P.O. Box </ListItem>
+            <ListItem>Location: Gallatin, TN</ListItem>
+          </List>
+        }
+        image={hardscape}
+      />
+      <Title ref={irrigationRef}>Irrigation</Title>
+      <SideBySide
+        color={'beige'}
+        title={'Irrigation'}
+        text={
+          <List>
+            <ListItem>Phone Number: 615-969-9382</ListItem>
+            <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
+            <ListItem>Mailing Address: P.O. Box </ListItem>
+            <ListItem>Location: Gallatin, TN</ListItem>
+          </List>
+        }
+        image={plantInstallation}
+      />
+      <Title ref={maintenanceRef}>Maintenance</Title>
+      <SideBySide
+        color={'white'}
+        title={'Maintenance'}
+        text={
+          <List>
+            <ListItem>Phone Number: 615-969-9382</ListItem>
+            <ListItem>Email: Brandt@WoodsLandscapingLLC.com</ListItem>
+            <ListItem>Mailing Address: P.O. Box </ListItem>
+            <ListItem>Location: Gallatin, TN</ListItem>
+          </List>
+        }
+        image={plantInstallation}
+      />
+    </Wrapper>
+  );
+};
 
 export default Services;

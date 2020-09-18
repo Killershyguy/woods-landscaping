@@ -54,7 +54,12 @@ const Header = () => (
       <Link to="/" isLogo>
         <Logo src={logo} alt="wood's landscaping logo" />
       </Link>
-      <a href="tel:615-969-9382" style={{ textDecoration: 'none' }}>615-969-9382</a>
+      <a
+        href="tel:615-969-6025"
+        style={{ textDecoration: 'none', color: 'black' }}
+      >
+        615-969-6025
+      </a>
     </LogoBar>
     <GoldBar />
     <LinkWrapper>
@@ -64,6 +69,7 @@ const Header = () => (
       <Link to="/Contact" text="Contact" />
       <Link to="/Gallery" text="Gallery" />
     </LinkWrapper>
+    <GoldBar />
   </Wrapper>
 );
 export default Header;

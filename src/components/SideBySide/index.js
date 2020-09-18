@@ -14,6 +14,7 @@ const Image = styled.img`
 `;
 
 const Wrapper = styled.div`
+  background-color: ${p => p.color};
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -44,8 +45,8 @@ const ImgWrapper = styled.div`
   padding-bottom: 100px;
 `;
 
-const SideBySide = ({ text, title, image, imageText, subTitle }) => (
-  <Wrapper>
+const SideBySide = ({ text, title, image, imageText, subTitle, color }) => (
+  <Wrapper color={color}>
     <TextWrapper>
       <TitleWrapper>
         {title && <Title>{title}</Title>}
@@ -68,7 +69,9 @@ SideBySide.propTypes = {
   // displays image on the right side
   image: PropTypes.node.isRequired,
   // displays text under the image
-  imageText: PropTypes.string
+  imageText: PropTypes.string,
+
+  subTitle: PropTypes.string
 };
 
 export default SideBySide;

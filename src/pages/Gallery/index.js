@@ -30,28 +30,28 @@ const Title = styled.h1`
 `;
 
 const test = require('./captainCrunch.jpg');
-const test2 = require('./captainCrunch2.jpg');
-const test3 = require('./captainCrunch3.jpg');
+// const test2 = require('./captainCrunch2.jpg');
+// const test3 = require('./captainCrunch3.jpg');
 
 const Gallery = () => (
-    <Wrapper>
-      <Title>Gallery</Title>
-        <ImageRow>
-          <Image src={test} />
-          <Image src={test} />
-          <Image src={test} />
-        </ImageRow>
-        <ImageRow>
-          <Image src={test} />
-          <Image src={test} />
-          <Image src={test} />
-        </ImageRow>
-        <ImageRow>
-          <Image src={test} />
-          <Image src={test} />
-          <Image src={test} />
-        </ImageRow>
-    </Wrapper>
-    );
+  <Wrapper>
+    <Title>Gallery</Title>
+    <ImageRow>
+      <Image src={test} />
+      <Image src={test} />
+      <Image src={test} />
+    </ImageRow>
+    <ImageRow>
+      <Image src={test} />
+      <Image src={test} />
+      <Image src={test} />
+    </ImageRow>
+    <ImageRow>
+      <Image src={test} />
+      <Image src={test} />
+      <Image src={test} />
+    </ImageRow>
+  </Wrapper>
+);
 
 export default Gallery;
